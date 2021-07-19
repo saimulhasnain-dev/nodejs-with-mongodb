@@ -1,56 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const GENDER = ["MALE", "FEMALE", "OTHER"]
+const GENDER = ["MALE", "FEMALE", "OTHER"];
+const PersonalDetails = require('./contactDetails.model').schema;
+const AdmissionDetails = require('./admissionDetails.model').schema;
+const DiagnosisDetails = require('./diagnosisDetails.model').schema;
+const CovidDetails = require('./covidDetails.model').schema;
+const MucorDetails = require('./mucorDetails.model').schema;
+const OcularFindings = require('./ocularFindings.model').schema;
+const ImagingDetail = require('./imagingDetails.model').schema;
+const Comorbidity = require('./comorbidity.model').schema;
+const ProcedureDone = require('./procedureDone.model').schema;
+const Biopsy = require('./biopsy.model').schema;
 
-const PersonalDetails = {
-    state: {
-        type: String,
-        required: [true, 'State is required']
-    },
-    city: {
-        type: String,
-        required: [true, 'City is required']
-    },
-    address: {
-        type: String,
-        required: [true, 'Address is required']
-    },
-    area: {
-        type: String,
-        required: [true, 'Area is required']
-    },
-    complete_address: {
-        type: String,
-        required: [true, 'Complete Address is required']
-    },
-    pin_code: {
-        type: String,
-        required: [true, 'Pin code is required']
-    },
-    mobile: {
-        type: String,
-        required: [true, 'Mobile is required']
-    },
-};
 
-const AdmissionDetails = {
-    doa: {
-        type: String,
-        required: [true, 'Date of admission is required']
+const PatientsSchema = new Schema({
+    assigned_ward: {
+        type: String
     },
-    uhid: {
-        type: String,
-        required: [true, 'UHID is required']
-    }
-}
-
-const Diagnosis = {
-    diagnosis_note: {
-        type: String,
-        // required: [true, 'Name is required']
-    },
-}
-const PatientSchema = new Schema({
     name: {
         type: String,
         required: [true, 'Name is required']
@@ -58,6 +24,9 @@ const PatientSchema = new Schema({
     dob: {
         type: String,
         required: [true, 'DOB is required']
+    },
+    age: {
+        type: Number,
     },
     gender: {
         type: String,
@@ -75,12 +44,20 @@ const PatientSchema = new Schema({
     },
     personalDetails: PersonalDetails,
     admissionDetails: [AdmissionDetails],
-    diagnosis: [Diagnosis],
+    diagnosisDetails: [DiagnosisDetails],
+    covidDetails: [CovidDetails],
+    mucorDetails: [MucorDetails],
+    ocularFindings: [OcularFindings],
+    imageingDetails: [ImagingDetail],
+    comorbidity: [Comorbidity],
+    procedureDone: [ProcedureDone],
+    biopsy: [Biopsy]
+
 }, {
     timestamps: true
 });
 
 
-const Patient = mongoose.model('patient', PatientSchema);
+const Patients = mongoose.model('patients', PatientsSchema);
 
-module.exports = Patient;
+module.exports = Patients;

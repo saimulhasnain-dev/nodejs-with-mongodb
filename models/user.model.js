@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const STATUS = ["ACTIVE", "BLOCKED", "DELETED"];
 const USER_TYPE = ["WARD_BOY", "DOCTOR", "OTHER"]
+const NOTIFICATION_STATUS = ["ON", "OFF"];
 
 const UsersSchema = new Schema({
     name: {
@@ -11,6 +12,11 @@ const UsersSchema = new Schema({
         type: String,
         unique: true,
         required: [true, 'Email id is required']
+    },
+    mobile: {
+        type: Number,
+        unique: true,
+        required: [true, 'Mobile is required']
     },
     password: {
         type: String,
@@ -27,9 +33,17 @@ const UsersSchema = new Schema({
         enum: STATUS,
         default: 'ACTIVE'
     },
+    notification_status: {
+        type: String,
+        enum: NOTIFICATION_STATUS,
+        default: 'ON'
+    },
     sos: {
         type: Boolean,
         default: false
+    },
+    device_token: {
+        type: String,
     }
 }, {
     timestamps: true
