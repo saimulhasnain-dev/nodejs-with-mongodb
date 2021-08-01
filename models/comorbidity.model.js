@@ -1,31 +1,29 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const STATUS = ["YES", "NO"];
-
 
 const ComorbiditySchema = new Schema({
     diabetes: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     hiv: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     asthma: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     organ_transplant: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     malignancy: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     renal_failure: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     diabetes_year: {
@@ -37,7 +35,7 @@ const ComorbiditySchema = new Schema({
     diabetes_days: {
         type: String,
     },
-    diabetes_status: {
+    diabetes_String: {
         type: String,
     },
     diabetes_type: {
@@ -52,6 +50,9 @@ const ComorbiditySchema = new Schema({
     media_attachments: {
         type: String,
     },
+    immunosuppressants: {
+        type: String
+    }
 }, {
     timestamps: true
 }, {

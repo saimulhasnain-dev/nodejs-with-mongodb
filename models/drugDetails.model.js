@@ -1,38 +1,37 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const STATUS = ["YES", "NO"];
 
 const DrugDetailsSchema = new Schema({
     remedisvir: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     remedisvir_duration: {
-        type: String
+        type: Number
     },
     tocilizumab: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     tocilizumab_duration: {
-        type: String
+        type: Number
     },
     ventilation: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     ventilation_duration: {
-        type: String
+        type: Number
     },
     o2: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     o2_duration: {
-        type: String
+        type: Number
     },
     corticosteroids: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     corticosteroids_method: {

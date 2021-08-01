@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const STATUS = ["YES", "NO"];
 
 const BiopsySchema = new Schema({
     status: {
-        type: STATUS,
+        type: String,
         default: "NO"
     },
     result: {

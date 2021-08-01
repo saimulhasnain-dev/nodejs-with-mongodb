@@ -9,5 +9,17 @@ module.exports = {
             password: passwordHash
         })
         return user;
+    },
+    getUserById: async (userId) => {
+        const user = await userModel.findById(userId);
+        return user;
+    },
+    getUserByFields: async (fields) => {
+        const user = await userModel.findOne({ ...fields });
+        return user;
+    },
+    updateUser: async (userId, data) => {
+        const user = await userModel.findByIdAndUpdate(userId, data);
+        return user;
     }
 };

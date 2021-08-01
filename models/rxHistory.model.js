@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const STATUS = ['STOPPED', 'HOLD', 'STARTED']
 const rxSchema = new Schema({
     drug_type: {
         type: String,
@@ -30,7 +29,7 @@ const rxSchema = new Schema({
         type: String,
     },
     drug_status: {
-        type: STATUS,
+        type: String,
         default: "STARTED"
     },
 }, {
@@ -38,8 +37,8 @@ const rxSchema = new Schema({
 });
 
 const RxHistorySchema = new Schema({
-    patient_id: {
-        type: Schema.Types.ObjectId, ref: 'Patients'
+    patient: {
+        type: Schema.Types.ObjectId, ref: 'patients'
     },
     anti_biotics: rxSchema,
     anti_fungal: rxSchema,

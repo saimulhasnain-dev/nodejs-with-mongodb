@@ -44,6 +44,9 @@ const UsersSchema = new Schema({
     },
     device_token: {
         type: String,
+    },
+    jwt_token: {
+        type: String,
     }
 }, {
     timestamps: true

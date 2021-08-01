@@ -77,8 +77,8 @@ const OtherSchema = new Schema({
     media: { type: String },
 })
 const InvestigationSchema = new Schema({
-    patient_id: {
-        type: Schema.Types.ObjectId, ref: 'Patients'
+    patient: {
+        type: Schema.Types.ObjectId, ref: 'patients'
     },
     hemogram: HemogramSchema,
     coagulogram: CoagulogramSchema,

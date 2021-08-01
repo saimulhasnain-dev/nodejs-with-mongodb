@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const FeedSchema = new Schema({
-    patient_id: {
-        type: Schema.Types.ObjectId, ref: 'Patients'
+    patient: {
+        type: Schema.Types.ObjectId, ref: 'patients'
     },
     calories: {
-        type: String,
+        type: Number,
     },
     protein: {
-        type: String
+        type: Number
     },
     stool_passed: {
         type: String

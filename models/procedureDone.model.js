@@ -6,12 +6,15 @@ const ProcedureDoneSchema = new Schema({
     status: {
         type: String,
     },
-    date_of_procedure: {
+    procedure_date: {
         type: Date
     },
-    procedure_performed: [{
+    procedure_date: {
+        type: String,
+    },
+    procedure_performed: {
         type: String
-    }],
+    },
     procedure_notes: {
         type: String
     },

@@ -3,28 +3,28 @@ const Schema = mongoose.Schema;
 
 const OcularFindingsSchema = new Schema({
     vision_od: {
-        type: String,
+        type: Number,
     },
     vision_os: {
-        type: String,
+        type: Number,
     },
     pupil_od: {
-        type: String,
+        type: Number,
     },
     pupil_os: {
-        type: String,
+        type: Number,
     }, 
     ocular_od: {
-        type: String,
+        type: Number,
     },
     ocular_os: {
-        type: String,
+        type: Number,
     },
     eyelids_od: {
-        type: String,
+        type: Number,
     },
     eyelids_os: {
-        type: String,
+        type: Number,
     },
     eom: {
         type: String,
@@ -35,18 +35,18 @@ const OcularFindingsSchema = new Schema({
     posterior_segment: {
         type: String,
     },
-    ent_findings: {
-        type: String,
-    },
-    ent_media: {
-        type: String,
-    },
-    other_findings: {
-        type: String,
-    },
-    other_media: {
-        type: String,
-    },
+    // ent_findings: {
+    //     type: String,
+    // },
+    // ent_media: {
+    //     type: String,
+    // },
+    // other_findings: {
+    //     type: String,
+    // },
+    // other_media: {
+    //     type: String,
+    // },
 }, {
     timestamps: true
 });

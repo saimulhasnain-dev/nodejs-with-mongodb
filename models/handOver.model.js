@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const HandoverSchema = new Schema({
-    patient_id: {
-        type: Schema.Types.ObjectId, ref: 'Patients'
+    patient: {
+        type: Schema.Types.ObjectId, ref: 'patients'
     },
     note: {
         type: String,
